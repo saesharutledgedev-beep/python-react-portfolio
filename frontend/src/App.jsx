@@ -1,52 +1,27 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import headshotImg from './assets/Senger_Headshot.jpg'
+import { fetchProjects } from './features/projects/projectsSlice'
+import { fetchInfo } from './features/personalInfo/personalInfoSlice'
 import './App.css'
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5000'
-
-const TITLES = [
-  'Solutions Architect',
-  'Product Owner',
-  'Engineering Manager',
-  'Full Stack Software Engineer',
-]
-
-const CONTACT_LINKS = [
-  { label: 'Email', href: 'mailto:saesha.rutledge.dev@gmail.com' },
-  { label: 'GitHub', href: 'https://github.com/saesharutledgedev-beep' },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/saesha-rutledge-profile-link/',
-  },
-]
-
 function App() {
-  const [projects, setProjects] = useState([])
-  const [projectsError, setProjectsError] = useState(null)
-  const [projectsLoading, setProjectsLoading] = useState(true)
+  const dispatch = useDispatch()
+  const projects = useSelector((state) => state.projects.items)
+  const projectsStatus = useSelector((state) => state.projects.status)
+  const projectsError = useSelector((state) => state.projects.error)
+  const projectsLoading = projectsStatus === 'idle' || projectsStatus === 'loading'
+
+  const dispatchInfo = useDispatch()
+  const personalInfo = useSelector((state) => state.personalInfo.items)
+  const personalInfoStatus = useSelector((state) => state.personalInfo.status)
+  const personalInfoError = useSelector((state) => state.personalInfo.error)
+  const personalInfoLoading = personalInfoStatus === 'idle' || personalInfoStatus === 'loading'
 
   useEffect(() => {
-    let cancelled = false
-
-    fetch(`${API_BASE}/api/projects`)
-      .then((res) => {
-        if (!res.ok) throw new Error(`Request failed: ${res.status}`)
-        return res.json()
-      })
-      .then((data) => {
-        if (!cancelled) setProjects(data)
-      })
-      .catch((err) => {
-        if (!cancelled) setProjectsError(err.message)
-      })
-      .finally(() => {
-        if (!cancelled) setProjectsLoading(false)
-      })
-
-    return () => {
-      cancelled = true
-    }
-  }, [])
+    dispatch(fetchProjects()),
+      dispatchInfo(fetchInfo())
+  }, [dispatch, dispatchInfo])
 
   return (
     <>
@@ -60,13 +35,29 @@ function App() {
         />
         <h1>Saesha Rutledge</h1>
         <ul className="titles">
-          {TITLES.map((title) => (
-            <li key={title}>{title}</li>
-          ))}
+
+          {personalInfoLoading && <p>Loading contacts…</p>}
+          {personalInfoError && (
+            <p className="error">Couldn't load contacts: {personalInfoError}</p>
+          )}
+          {!personalInfoLoading && !personalInfoError && (
+            <ul className="contact-list">
+              {personalInfo.titles.map((title) => (
+                <li key={title}>{title}</li>
+              ))}
+            </ul>
+          )}
         </ul>
         <p className="tagline">
-          I turn ambiguity into buildable plans — and plans into shipped
-          systems.
+          {personalInfoLoading && <p>Loading tagline…</p>}
+          {personalInfoError && (
+            <p className="error">Couldn't load tagline: {personalInfoError}</p>
+          )}
+          {!personalInfoLoading && !personalInfoError && (
+            <ul className="contact-list">
+              {personalInfo.tagline}
+            </ul>
+          )}
         </p>
       </section>
 
@@ -75,11 +66,68 @@ function App() {
       <section id="about">
         <h2>About</h2>
         <p>
-          AI-forward full-stack engineer, technical product manager, and
-          solutions architect who owns workflow-driven web experiences
-          end-to-end. I design and deliver systems where correctness
-          matters, requirements are messy, and the environment is regulated
-          enough that tradeoffs must be explicit.
+          {personalInfoLoading && <p>Loading hero…</p>}
+          {personalInfoError && (
+            <p className="error">Couldn't load hero: {personalInfoError}</p>
+          )}
+          {!personalInfoLoading && !personalInfoError && (
+            <ul className="contact-list">
+              {personalInfo.hero.split('\n\n').map((paragraph, index) => (
+                <li key={index}>{paragraph.trim()}</li>
+              ))}
+            </ul>
+          )}
+        </p>
+      </section>
+
+      <section id="about">
+        <h2>Technical Skills</h2>
+        <p>
+          {personalInfoLoading && <p>Loading technical skills…</p>}
+          {personalInfoError && (
+            <p className="error">Couldn't load technical skills: {personalInfoError}</p>
+          )}
+          {!personalInfoLoading && !personalInfoError && (
+            <ul className="contact-list">
+              {personalInfo.technical_skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          )}
+        </p>
+      </section>
+
+      <section id="about">
+        <h2>Professional Skills</h2>
+        <p>
+          {personalInfoLoading && <p>Loading professional skills…</p>}
+          {personalInfoError && (
+            <p className="error">Couldn't load professional skills: {personalInfoError}</p>
+          )}
+          {!personalInfoLoading && !personalInfoError && (
+            <ul className="contact-list">
+              {personalInfo.professional_skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          )}
+        </p>
+      </section>
+
+      <section id="about">
+        <h2>Tooling</h2>
+        <p>
+          {personalInfoLoading && <p>Loading tooling…</p>}
+          {personalInfoError && (
+            <p className="error">Couldn't load tooling: {personalInfoError}</p>
+          )}
+          {!personalInfoLoading && !personalInfoError && (
+            <ul className="contact-list">
+              {personalInfo.tooling.map((tool) => (
+                <li key={tool}>{tool}</li>
+              ))}
+            </ul>
+          )}
         </p>
       </section>
 
@@ -112,15 +160,22 @@ function App() {
 
       <section id="contact">
         <h2>Contact</h2>
-        <ul className="contact-list">
-          {CONTACT_LINKS.map((link) => (
-            <li key={link.label}>
-              <a href={link.href} target="_blank" rel="noreferrer">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+
+        {personalInfoLoading && <p>Loading personal info…</p>}
+        {personalInfoError && (
+          <p className="error">Couldn't load personal info: {personalInfoError}</p>
+        )}
+        {!personalInfoLoading && !personalInfoError && (
+          <ul className="contact-list">
+            {personalInfo.contact_links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
     </>
   )

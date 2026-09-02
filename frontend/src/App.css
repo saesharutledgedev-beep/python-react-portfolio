@@ -49,7 +49,10 @@
 
 #about,
 #projects,
-#contact {
+#contact,
+#professional-skills,
+#technical-skills,
+#tooling {
   padding: 32px 20px;
   text-align: left;
   max-width: 720px;
@@ -58,7 +61,10 @@
   box-sizing: border-box;
 }
 
-#about p {
+#about p,
+#professional-skills p,
+#technical-skills p,
+#tooling p {
   color: var(--text);
 }
 

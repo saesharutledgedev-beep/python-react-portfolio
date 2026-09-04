@@ -1,3 +1,38 @@
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  padding: 0 20px;
+  height: 48px;
+  box-sizing: border-box;
+  background-color: #2f273e;
+
+  a,
+  button {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #e37043;
+    font-size: 14px;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 999px;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+  }
+}
+
 .headshot {
   width: 160px;
   height: 160px;
@@ -35,7 +70,6 @@
   }
 }
 
-#about,
 #experience,
 #education,
 #projects {
@@ -47,7 +81,7 @@
   box-sizing: border-box;
 }
 
-
+#about,
 #education,
 #professional-skills,
 #technical-skills,

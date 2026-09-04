@@ -1,3 +1,4 @@
+import Nav from './components/Nav/Nav'
 import Hero from './components/Hero/Hero'
 import About from './components/About/About'
 import Skills from './components/Skills/Skills'
@@ -9,6 +10,7 @@ import Contacts from './components/Contacts/Contacts'
 function App() {
   return (
     <>
+      <Nav />
       <About />
       <div className="ticks"></div>
       <Hero />

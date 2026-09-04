@@ -18,7 +18,6 @@ function Hero() {
     <>
 
       <section id="hero">
-    <h2>{hero.name}</h2>
         <ul className="titles">
 
           {heroLoading && <p>Loading contacts…</p>}

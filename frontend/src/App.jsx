@@ -9,9 +9,9 @@ import Contacts from './components/Contacts/Contacts'
 function App() {
   return (
     <>
-      <Hero />
-      <div className="ticks"></div>
       <About />
+      <div className="ticks"></div>
+      <Hero />
       <div className="ticks"></div>
       <Skills />
       <div className="ticks"></div>

@@ -9,7 +9,7 @@ import contactReducer from '../features/contacts/contactsSlice'
 
 export const store = configureStore({
   reducer: {
-    aboutInfo: aboutInfoReducer,
+    about: aboutInfoReducer,
     hero: heroReducer,
     experienceInfo: experienceInfoReducer,
     educationInfo: educationInfoReducer,

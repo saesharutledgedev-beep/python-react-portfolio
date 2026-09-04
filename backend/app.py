@@ -9,7 +9,7 @@ from routes.experience import experience_info_bp
 
 from routes.education import education_info_bp
 
-from routes.skills import skills_info_bp
+from routes.skills import skills_bp
 
 from routes.projects import projects_bp
 
@@ -22,7 +22,7 @@ app.register_blueprint(about_bp)
 app.register_blueprint(hero_bp)
 app.register_blueprint(experience_info_bp)
 app.register_blueprint(education_info_bp)
-app.register_blueprint(skills_info_bp)
+app.register_blueprint(skills_bp)
 app.register_blueprint(projects_bp)
 app.register_blueprint(contacts_bp)  
 

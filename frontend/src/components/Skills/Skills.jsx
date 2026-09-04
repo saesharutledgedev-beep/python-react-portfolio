@@ -17,60 +17,60 @@ function Skills() {
   return (
     <>
       <section id="technical-skills">
-        <h2>{skills.skills_info[0].label}</h2>
-        <p>
-          {skillsLoading && <p>Loading technical skills…</p>}
-          {skillsError && (
-            <p className="error">Couldn't load technical skills: {skillsError}</p>
-          )}
-          {!skillsLoading && !skillsError && (
+        {skillsLoading && <p>Loading technical skills…</p>}
+        {skillsError && (
+          <p className="error">Couldn't load technical skills: {skillsError}</p>
+        )}
+        {!skillsLoading && !skillsError && (
+          <>
+            <h2>{skills.skills_info[0].label}</h2>
             <ul className="contact-list">
               {skills.skills_info[0].details.split(';').map((skill) => (
                 <li key={skill}>{skill.trim()}</li>
               ))}
             </ul>
-          )}
-        </p>
+          </>
+        )}
       </section>
 
       <div className="ticks"></div>
 
       <section id="professional-skills">
-        <h2>{skills.skills_info[1].label}</h2>
-        <p>
-          {skillsLoading && <p>Loading professional skills…</p>}
-          {skillsError && (
-            <p className="error">Couldn't load professional skills: {skillsError}</p>
-          )}
-          {!skillsLoading && !skillsError && (
+        {skillsLoading && <p>Loading professional skills…</p>}
+        {skillsError && (
+          <p className="error">Couldn't load professional skills: {skillsError}</p>
+        )}
+        {!skillsLoading && !skillsError && (
+          <>
+            <h2>{skills.skills_info[1].label}</h2>
             <ul className="contact-list">
               {skills.skills_info[1].details.split(';').map((skill) => (
                 <li key={skill}>{skill.trim()}</li>
               ))}
             </ul>
-          )}
-        </p>
+          </>
+        )}
       </section>
 
       <div className="ticks"></div>
 
       <section id="tooling">
-        <h2>{skills.skills_info[2].label}</h2>
-        <p>
-          {skillsLoading && <p>Loading tooling…</p>}
-          {skillsError && (
-            <p className="error">Couldn't load tooling: {skillsError}</p>
-          )}
-          {!skillsLoading && !skillsError && (
+        {skillsLoading && <p>Loading tooling…</p>}
+        {skillsError && (
+          <p className="error">Couldn't load tooling: {skillsError}</p>
+        )}
+        {!skillsLoading && !skillsError && (
+          <>
+            <h2>{skills.skills_info[2].label}</h2>
             <ul className="contact-list">
               {skills.skills_info[2].details.split(';').map((skill) => (
                 <li key={skill}>{skill.trim()}</li>
               ))}
             </ul>
-          )}
-        </p>
+          </>
+        )}
       </section>
-      <div className="ticks"></div>    
+      <div className="ticks"></div>
     </>
   )
 }

@@ -26,7 +26,6 @@ function About() {
           alt="Saesha Rutledge"
         />
         <h1>Saesha Rutledge</h1>
-        <p>{about.name}</p>
         <ul className="titles">
 
           {aboutLoading && <p>Loading contacts…</p>}

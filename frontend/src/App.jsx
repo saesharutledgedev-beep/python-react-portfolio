@@ -13,11 +13,11 @@ function App() {
       <div className="ticks"></div>
       <Hero />
       <div className="ticks"></div>
+      <Experience />
+      <div className="ticks"></div>
       <Skills />
       <div className="ticks"></div>
       <Education />
-      <div className="ticks"></div>
-      <Experience />
       <div className="ticks"></div>
       <Projects />
       <div className="ticks"></div>

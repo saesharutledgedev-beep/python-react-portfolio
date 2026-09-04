@@ -24,11 +24,11 @@ function Skills() {
         {!skillsLoading && !skillsError && (
           <>
             <h2>{skills.skills_info[0].label}</h2>
-            <ul className="contact-list">
-              {skills.skills_info[0].details.split(';').map((skill) => (
-                <li key={skill}>{skill.trim()}</li>
-              ))}
-            </ul>
+            <p>
+              <span className="contact-list">
+                {skills.skills_info[0].details}
+              </span>
+            </p>
           </>
         )}
       </section>
@@ -43,11 +43,11 @@ function Skills() {
         {!skillsLoading && !skillsError && (
           <>
             <h2>{skills.skills_info[1].label}</h2>
-            <ul className="contact-list">
-              {skills.skills_info[1].details.split(';').map((skill) => (
-                <li key={skill}>{skill.trim()}</li>
-              ))}
-            </ul>
+            <p>
+              <span className="contact-list">
+                {skills.skills_info[1].details}
+              </span>
+            </p>
           </>
         )}
       </section>
@@ -62,11 +62,11 @@ function Skills() {
         {!skillsLoading && !skillsError && (
           <>
             <h2>{skills.skills_info[2].label}</h2>
-            <ul className="contact-list">
-              {skills.skills_info[2].details.split(';').map((skill) => (
-                <li key={skill}>{skill.trim()}</li>
-              ))}
-            </ul>
+            <p>
+              <span className="contact-list">
+                {skills.skills_info[2].details}
+              </span>
+            </p>
           </>
         )}
       </section>

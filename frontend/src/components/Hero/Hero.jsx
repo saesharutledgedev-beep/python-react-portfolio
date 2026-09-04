@@ -18,19 +18,20 @@ function Hero() {
     <>
 
       <section id="hero">
-        <ul className="titles">
+        <ul className="hero-list">
 
           {heroLoading && <p>Loading contacts…</p>}
           {heroError && (
             <p className="error">Couldn't load contacts: {heroError}</p>
           )}
           {!heroLoading && !heroError && (
-            <ul className="contact-list">
+            <ul>
               {hero.heroDetails.split('\n\n').map((paragraph, index) => (
-                <li key={index}>{paragraph.trim()}</li>
+                <li className="hero-items" key={index}>{paragraph.trim()}</li>
               ))}
             </ul>
           )}
+
         </ul>
       </section>
       <div className="ticks"></div>

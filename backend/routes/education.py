@@ -7,7 +7,7 @@ education_info_bp = Blueprint("education-info", __name__, url_prefix="/api/educa
 def get_education_info():
     education_info = {
             "id": 4,
-            "name": "Education Info",
+            "name": "Education",
             "summary": "From one creative field to another.",
             "education_info": [
                 { "label": 'DigitalCrafts', 

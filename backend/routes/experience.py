@@ -7,7 +7,7 @@ experience_info_bp = Blueprint("experience-info", __name__, url_prefix="/api/exp
 def get_experience_info():
     experience_info = {
             "id": 3,
-            "name": "Experience Info",
+            "name": "Experience",
             "experience_items": [
                 {
                     "label": "VisualVault",

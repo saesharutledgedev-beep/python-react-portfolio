@@ -2,17 +2,17 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5000'
 
-export const fetchInfo = createAsyncThunk(
-  'projects/fetchPersonalInfo',
+export const fetchContactsInfo = createAsyncThunk(
+  'contacts/fetchContactsInfo',
   async () => {
-    const res = await fetch(`${API_BASE}/api/personal-info`)
+    const res = await fetch(`${API_BASE}/api/contacts`)
     if (!res.ok) throw new Error(`Request failed: ${res.status}`)
     return res.json()
   },
 )
 
-const personalInfo = createSlice({
-  name: 'personal-info',
+const contactsInfo = createSlice({
+  name: 'contacts-info',
   initialState: {
     items: [],
     status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
@@ -21,19 +21,19 @@ const personalInfo = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchInfo.pending, (state) => {
+      .addCase(fetchContactsInfo.pending, (state) => {
         state.status = 'loading'
         state.error = null
       })
-      .addCase(fetchInfo.fulfilled, (state, action) => {
+      .addCase(fetchContactsInfo.fulfilled, (state, action) => {
         state.status = 'succeeded'
         state.items = action.payload
       })
-      .addCase(fetchInfo.rejected, (state, action) => {
+      .addCase(fetchContactsInfo.rejected, (state, action) => {
         state.status = 'failed'
         state.error = action.error.message
       })
   },
 })
 
-export default personalInfo.reducer
+export default contactsInfo.reducer

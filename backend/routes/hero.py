@@ -16,7 +16,7 @@ def get_hero():
 
                     I raise delivery quality through clear technical design, crisp acceptance criteria, and disciplined execution.
 
-                    I operate comfortably at the product/engineering seam: translating stakeholder needs into wireframes, user stories, and executable plans, then driving delivery through UAT and release without losing the original intent.
+                    I operate comfortably at the product/engineering seam: translating stakeholder needs into wireframes, user stories, and executable plans, then driving delivery through UAT and release.
 
                     PhD‑trained researcher and writer with rigorous analytical discipline, deep‑work focus, and documentation that stands up to scrutiny."""                        
     }

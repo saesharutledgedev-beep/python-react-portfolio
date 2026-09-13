@@ -19,7 +19,7 @@
     background: none;
     border: none;
     color: #e37043;
-    font-size: 14px;
+    font-size: 18px;
     font-family: inherit;
     text-decoration: none;
     cursor: pointer;
@@ -165,17 +165,14 @@
 
   li {
     flex: 1 1 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #c084fc26;
     color: #e37043;
-    border-radius: 999px;
+    border-radius: 77px;
     font-size: 14px;
-    padding: 45px;
-  }
-
-  li:nth-child(1),
-  li:nth-child(4),
-  li:nth-child(6) {
-padding: clamp(4rem, 5vw, 3rem) !important;
+    padding: clamp(2rem, 5vw, 3rem);
   }
 }
 
@@ -189,9 +186,9 @@ padding: clamp(4rem, 5vw, 3rem) !important;
 
   a {
     display: inline-flex;
-        background-color: #c084fc26;
-        color: #e37043;
-    border-radius: 6px;
+    background-color: #c084fc26;
+    color: #e37043;
+    border-radius: 999px;
     padding: 8px 16px;
     text-decoration: none;
     transition: box-shadow 0.3s;

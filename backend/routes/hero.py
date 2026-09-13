@@ -8,16 +8,16 @@ def get_hero():
     hero =  {
         "id": 2,
     "name": "Hero",
-    "heroDetails": """I turn ambiguity into buildable plans — and plans into shipped systems.
+    "heroDetails": """From ambiguity into buildable plans.
 
-                    AI‑forward full‑stack engineer, technical product manager, and solutions architect who owns workflow‑driven web experiences end‑to‑end.
+                    AI‑forward full‑stack engineer, technical product manager.
 
-                    I design and deliver systems where correctness matters, requirements are messy, and the environment is regulated enough that tradeoffs must be explicit.                
+                    High stakes system design and implementation.                
 
-                    I raise delivery quality through clear technical design, crisp acceptance criteria, and disciplined execution.
+                    Exceptional delivery quality with clear technical design and acceptance criteria.
 
-                    I operate comfortably at the product/engineering seam: translating stakeholder needs into wireframes, user stories, and executable plans, then driving delivery through UAT and release.
+                    Bridging product and engineering by shaping requirements.
 
-                    PhD‑trained researcher and writer with rigorous analytical discipline, deep‑work focus, and documentation that stands up to scrutiny."""                        
+                    PhD‑trained published researcher."""                        
     }
     return jsonify(hero)

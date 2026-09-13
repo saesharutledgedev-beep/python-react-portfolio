@@ -13,7 +13,7 @@ def get_experience_info():
                     "label": "VisualVault",
                     "title": "Solutions Architect",
                     "dates": "May 2023 – Present",
-                    "details": """• Lead technical direction and manage a team of 12 developers and 3 QA engineers through implementation and UAT phases, delivering an on-schedule statewide launch to replace the Department of Health's 2016 platform.
+                    "details": """• Lead technical direction and manage a team of 12 developers and 5 QA engineers through implementation and UAT phases, delivering an on-schedule statewide launch to replace the Department of Health's 2016 platform.
 • Reconstruct the agency's undocumented legacy process through twice-weekly working sessions with stakeholders, translating it into business rules, workflows, system designs, and user stories they review and approve, then expand scope to new statutory requirements on AWS.
 • Define the field-level validation and cleansing rules required to migrate legacy records the prior system never validated, working without documentation or cooperation from the outgoing vendor.
 • Deliver the Department of Health's first owned, queryable view of its registry population. The agency's published statistics are generated from this data model: nearly 30,000 active patients and designated providers, 300+ medically endorsed retailers, and 14,000+ card transactions in the first half of 2026.

@@ -11,8 +11,7 @@ def get_about():
             "titles": [
                 "AI‑Forward Product Manager",
                 "Full‑Stack Developer",
-                "Architecting Scalable Systems for Regulated Environments",
-            ],
-            "tagline": "AI‑Forward Product Manager | Full‑Stack Developer | Architecting Scalable Systems for Regulated Environments"
+                "Architecting Scalable Systems",
+            ]
         }
     return jsonify(about)

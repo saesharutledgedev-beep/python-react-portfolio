@@ -8,9 +8,9 @@ def get_hero():
     hero =  {
         "id": 2,
     "name": "Hero",
-    "heroDetails": """From ambiguity into buildable plans.
+    "heroDetails": """From ambiguity to buildable plans.
 
-                    AI‑forward full‑stack engineer, technical product manager.
+                    AI‑forward full‑stack engineer and technical product manager.
 
                     High stakes system design and implementation.                
 

@@ -17,11 +17,11 @@ Coursework: JavaScript, Node.js/Express, React, Redux, EJS, RESTful APIs, SQL, P
                     "details": """Achievements: Earned 4.0 GPA,Published peer-reviewed research, presented internationally, taught university-level courses, authored a 550-page dissertation""" },
                 {
                     "label": 'West Virginia University',
-                    "details": """Achievements: Taught university-level courses, earned 3.9 GPA,authored a 150-page thesis""",
+                    "details": """Achievements: Taught university-level courses, earned 3.9 GPA, authored a 150-page thesis""",
                 },
                 {
                     "label": 'University of Washington',
-                    "details": """Achievements: Performed in multiple ensembles, achieved 3.9 GPA""",
+                    "details": """Achievements: Performed in multiple ensembles, achieved 3.8 GPA""",
                 },
                 {
                     "label": 'Boise State University',
